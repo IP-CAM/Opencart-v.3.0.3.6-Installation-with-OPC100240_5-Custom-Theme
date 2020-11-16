@@ -2634,22 +2634,54 @@ a.banner_text::after {
 #tabs_info.product-tab {
 	padding: 0;
 	margin-top: 70px;
+	/* display: none; */
+}
+
+.product-tab .nav-tabs>li {
+	position: relative;
+	top: 1px;
+}
+
+.product-tab .nav-tabs>li:last-child {
 	display: none;
 }
 
 .product-tab .nav-tabs>li>a {
-	color: #000 !important;
 	font-weight: 400 !important;
-	background: #d4d4d4;
+	color: #000 !important;
+	background-color: #fff !important;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin: 0;
+	border: 1px solid #d0d0d0 !important;
+	border-left: none !important;
+	border-bottom: none;
+	border-bottom: 0;
+	padding: 14px 25px 10px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-ms-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+}
+
+.product-tab .nav-tabs>li:first-child {
+	border-left: 1px solid #d0d0d0 !important;
 }
 
 .product-tab .nav-tabs>li.active>a {
-	background: #000;
-	color: #fff !important;
+	background: #fff;
+	color: #000 !important;
+	border-bottom-color: #fff !important;
+	border-top: 2px solid #000 !important;
+	padding-top: 13px;
 }
 
 .product-tab .nav-tabs>li {
-	margin: 0 5px 0 0;
+	margin: 0;
 }
 
 /* End of product info page */
@@ -7743,17 +7775,42 @@ h4:focus a {
 	overflow: hidden;
 	margin-bottom: 0;
 	border: 1px solid gray;
+	position: relative;
 }
 
 .productpage .form-group .radio label input {
 	position: absolute;
 	margin: 0;
 	z-index: -1;
-	top: 50%;
-	left: 50%;
+	top: 0;
+	left: 0;
 	transform: translate(-50%, -50%);
+	height: 0;
+	width: 0;
 }
 
 .productpage .form-group .radio label input:checked {
 	z-index: 1;
+}
+
+.productpage .form-group .radio label input:checked::before {
+	content: '';
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	border: 2px solid #000;
+}
+
+/* .productpage .form-group.qty input[type="number"] {}
+
+.productpage .form-group.qty input[type="number"]::-webkit-outer-spin-button {}
+
+.productpage .form-group.qty input[type="number"]::-webkit-inner-spin-button {} */
+
+#tabs_info ul.nav.nav-tabs {
+	border-bottom: 1px solid #d0d0d0;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	margin-bottom: 26px;
 }
